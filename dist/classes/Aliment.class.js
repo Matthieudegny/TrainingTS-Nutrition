@@ -34,8 +34,11 @@ class Aliment {
     set image(newImage) {
         this._image = newImage;
     }
+    afficherValeursNutritive() {
+        console.log("Valeurs nutritionnelles :");
+        console.log("Lipide : " + this.lipide);
+        console.log("Glucide : " + this.glucide);
+        console.log("Proteine : " + this.proteine);
+    }
 }
 Aliment.listeAliments = [];
-let a1 = new Aliment("Pomme", ClassAliment.BON, 53, 0.2, 14, 0.3, "pomme.png");
-let a2 = new Aliment("Salami", ClassAliment.MAUVAIS, 270, 26.5, 1.3, 12, "Salami.png");
-console.log(Aliment.listeAliments);

@@ -4,17 +4,17 @@ enum ClassAliment {
   BON = "A",
 }
 
-class Aliment {
+abstract class Aliment {
   public static listeAliments: Aliment[] = [];
 
   constructor(
-    private _nom: string,
-    private _sante: ClassAliment,
+    protected _nom: string,
+    protected _sante: ClassAliment,
     public readonly calorie: number,
     public readonly lipide: number,
     public readonly glucide: number,
     public readonly proteine: number,
-    private _image: string
+    protected _image: string
   ) {
     Aliment.listeAliments.push(this);
   }
@@ -38,8 +38,13 @@ class Aliment {
   set image(newImage: string) {
     this._image = newImage;
   }
-}
 
-let a1 = new Aliment("Pomme", ClassAliment.BON, 53, 0.2, 14, 0.3, "pomme.png");
-let a2 = new Aliment("Salami", ClassAliment.MAUVAIS, 270, 26.5, 1.3, 12, "Salami.png");
-console.log(Aliment.listeAliments);
+  abstract afficherAliment(): void;
+
+  protected afficherValeursNutritive() {
+    console.log("Valeurs nutritionnelles :");
+    console.log("Lipide : " + this.lipide);
+    console.log("Glucide : " + this.glucide);
+    console.log("Proteine : " + this.proteine);
+  }
+}
