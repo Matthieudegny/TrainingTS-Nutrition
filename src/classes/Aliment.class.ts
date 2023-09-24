@@ -4,6 +4,7 @@ enum ClassAliment {
   BON = "A",
 }
 
+//abstract je ne peux plus instancier à partir de la classe Aliment, uniquement l'utiliser entant que class Parent
 abstract class Aliment {
   public static listeAliments: Aliment[] = [];
 
@@ -39,8 +40,10 @@ abstract class Aliment {
     this._image = newImage;
   }
 
+  //abstract chaque class fille doit posséder la fonction afficherAliment()
   abstract afficherAliment(): void;
 
+  //privé et accesiible de la classe enfant
   protected afficherValeursNutritive() {
     console.log("Valeurs nutritionnelles :");
     console.log("Lipide : " + this.lipide);

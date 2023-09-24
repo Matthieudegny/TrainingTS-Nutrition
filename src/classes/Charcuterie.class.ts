@@ -15,6 +15,7 @@ class Charcuterie extends Aliment {
 
   public afficherAliment() {
     console.log("Charcuterie : " + this._nom);
+    // le this fait référence directement à la class mère
     this.afficherValeursNutritive();
   }
 }

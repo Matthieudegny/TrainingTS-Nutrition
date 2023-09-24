@@ -5,6 +5,7 @@ var ClassAliment;
     ClassAliment["MOYEN"] = "B";
     ClassAliment["BON"] = "A";
 })(ClassAliment || (ClassAliment = {}));
+//abstract je ne peux plus instancier à partir de la classe Aliment, uniquement l'utiliser entant que class Parent
 class Aliment {
     constructor(_nom, _sante, calorie, lipide, glucide, proteine, _image) {
         this._nom = _nom;
@@ -34,6 +35,7 @@ class Aliment {
     set image(newImage) {
         this._image = newImage;
     }
+    //privé et accesiible de la classe enfant
     afficherValeursNutritive() {
         console.log("Valeurs nutritionnelles :");
         console.log("Lipide : " + this.lipide);
